@@ -43,13 +43,11 @@ public class LowestCommonAncestor
     } 
     private boolean findPath(Node root, int n, List<Integer> path) 
     { 
-        // base case 
+    	
         if (root == null) { 
             return false; 
         } 
           
-        // Store this node . The node will be removed if 
-        // not in path from root to n. 
         path.add(root.data); 
   
         if (root.data == n) { 
@@ -64,12 +62,26 @@ public class LowestCommonAncestor
             return true; 
         } 
   
-        // If not present in subtree rooted with root, remove root from 
-        // path[] and return false 
         path.remove(path.size()-1); 
   
         return false; 
     } 
+    
+    public static void main(String[] args) 
+    { 
+        LowestCommonAncestor tree = new LowestCommonAncestor(); 
+        tree.root = new Node(1); 
+        tree.root.left = new Node(2); 
+        tree.root.right = new Node(3); 
+        tree.root.left.left = new Node(4); 
+        tree.root.left.right = new Node(5); 
+        tree.root.right.left = new Node(6); 
+  
+        System.out.println("LCA(4, 5): " + tree.findLCA(3,5)); 
+        System.out.println("LCA(4, 6): " + tree.findLCA(1,6)); 
+        System.out.println("LCA(3, 4): " + tree.findLCA(2,2)); 
+        System.out.println("LCA(2, 4): " + tree.findLCA(4,5)); 
+    }
   
 }     
   
