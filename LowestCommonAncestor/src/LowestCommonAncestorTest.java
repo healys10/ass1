@@ -84,5 +84,5 @@ public class LowestCommonAncestorTest
 		assertEquals("Checking", -2, tree.findLCA(-5,-1));
 		assertEquals("Checking", -5, tree.findLCA(-5,-4));
 	}
-
+	
 }
