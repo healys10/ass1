@@ -7,6 +7,13 @@ public class LowestCommonAncestorTest
 {
 
 	@Test
+	public void testConstructor()
+	{
+		Node node = new Node(1);
+		assertNotNull("Testing constructor..",node);
+	}
+	
+	@Test
 	public void testEmpty()
 	{
 		LowestCommonAncestor tree = new LowestCommonAncestor();
