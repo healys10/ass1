@@ -1,7 +1,6 @@
 import java.util.ArrayList; 
 import java.util.List; 
   
-//Checking branch
 
 class Node { 
     int data; 
