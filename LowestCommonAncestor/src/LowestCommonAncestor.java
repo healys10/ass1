@@ -18,6 +18,17 @@ public class LowestCommonAncestor
 { 
 	Digraph graph;
 	
+	public LowestCommonAncestor(Digraph g)
+	{
+		this.graph = g;
+	}
+	
+	public boolean hasCycle()
+	{
+		DirectedCycle testDAG = new DirectedCycle(graph);
+		return testDAG.hasCycle();
+	}
+	
   
    /* Node root; 
     private List<Integer> path1 = new ArrayList<>(); 
@@ -69,7 +80,7 @@ public class LowestCommonAncestor
   
         return false; 
         */
-    } 
+    
     
     public static void main (String[] args)
     {
