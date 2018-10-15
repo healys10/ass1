@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List; 
   
 
-class Node { 
+/*class Node { 
     int data; 
     Node left, right; 
   
@@ -10,12 +10,16 @@ class Node {
         data = value; 
         left = right = null; 
     } 
-} 
+}*/
+
+
   
 public class LowestCommonAncestor 
 { 
+	Digraph graph;
+	
   
-    Node root; 
+   /* Node root; 
     private List<Integer> path1 = new ArrayList<>(); 
     private List<Integer> path2 = new ArrayList<>(); 
   
@@ -64,7 +68,14 @@ public class LowestCommonAncestor
         path.remove(path.size()-1); 
   
         return false; 
+        */
     } 
+    
+    public static void main (String[] args)
+    {
+    	Digraph v = new Digraph(0);
+    	v.addEdge(0,1);
+    }
     
 }     
 
