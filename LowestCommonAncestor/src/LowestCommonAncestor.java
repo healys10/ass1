@@ -29,6 +29,24 @@ public class LowestCommonAncestor
 		return testDAG.hasCycle();
 	}
 	
+	public int lowestCommonAncestor(int a,int b)
+	{
+		if(hasCycle()){
+			return -1;
+		}
+		else if (graph.V()==0){
+			return -1;
+		}
+		else{
+			//code
+			
+			
+			return -1;
+		}
+
+	}
+	
+
   
    /* Node root; 
     private List<Integer> path1 = new ArrayList<>(); 
