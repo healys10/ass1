@@ -39,7 +39,15 @@ public class LowestCommonAncestor
 		}
 		else{
 			//code
-			
+			DirectedDFS DFS_A = new DirectedDFS(graph, a);
+			DirectedDFS DFS_B = new DirectedDFS(graph, b);
+			boolean[]am = DFS_A.marked;
+			boolean[]bm = DFS_B.marked;
+			for(int i = 0; i<am.length; i++){
+				if(am[i]==bm[i]){
+					return i;
+				}
+			}
 			
 			return -1;
 		}
