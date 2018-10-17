@@ -6,18 +6,15 @@ import org.junit.Test;
 public class LowestCommonAncestorTest
 {
 
-	@Test
-	public void testConstructor()
-	{
-		Node node = new Node(1);
-		assertNotNull("Testing constructor..",node);
-	}
 	
 	@Test
 	public void testEmpty()
 	{
-		LowestCommonAncestor tree = new LowestCommonAncestor();
-		assertEquals("Checking empty tree", -1, tree.findLCA(2,3));
+		//LowestCommonAncestor tree = new LowestCommonAncestor();
+		Digraph graph = new Digraph(0);
+		LowestCommonAncestor lca = new LowestCommonAncestor(graph);
+		int tfest = lca.lowestCommonAncestor(1,2);
+		//assertEquals("Checking empty tree", -1, tree.findLCA(2,3));
 	}
 	
 	@Test
