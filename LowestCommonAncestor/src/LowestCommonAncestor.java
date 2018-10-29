@@ -47,7 +47,7 @@ public class LowestCommonAncestor
 				if(am[i]==bm[i]){
 					return i;
 				}
-			}
+			} 
 			
 			return -1;
 		}
