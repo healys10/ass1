@@ -28,7 +28,16 @@ public class DAG {
 	}
 	public void addEdge(int v, int w)
 	{
-			
+		if((validateVertex(v) > 0) && (validateVertex(w) > 0))
+		{
+			adj[v].add(w);
+			indegree[w]++;
+			E++;
+		}
+		else
+		{
+			System.out.println("Please enter numbers between 0 and " + (V-1));
+		}		
 	}
 	public int indegree(int v)
 	{
