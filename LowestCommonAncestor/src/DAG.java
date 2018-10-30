@@ -33,12 +33,23 @@ public class DAG {
 	public int indegree(int v)
 	{
 	
-		
+		return -1;
 	}
 	public int outdegree(int v)
 	{
 		
-		
+		return -1;
+	}
+	private int validateVertex(int v)
+	{
+		if(v < 0 || v >= V)
+		{
+			return -1;
+		}
+		else
+		{
+			return 1;
+		}
 	}
 
 }
