@@ -1,8 +1,7 @@
 import java.util.ArrayList; 
 import java.util.List; 
   
-
-/*class Node { 
+class Node { 
     int data; 
     Node left, right; 
   
@@ -10,53 +9,12 @@ import java.util.List;
         data = value; 
         left = right = null; 
     } 
-}*/
-
-
+} 
   
 public class LowestCommonAncestor 
 { 
-	Digraph graph;
-	
-	public LowestCommonAncestor(Digraph g)
-	{
-		this.graph = g;
-	}
-	
-	public boolean hasCycle()
-	{
-		DirectedCycle testDAG = new DirectedCycle(graph);
-		return testDAG.hasCycle();
-	}
-	
-	public int lowestCommonAncestor(int a,int b)
-	{
-		if(hasCycle()){
-			return -1;
-		}
-		else if (graph.V()==0){
-			return -1;
-		}
-		else{
-			//code
-			DirectedDFS DFS_A = new DirectedDFS(graph, a);
-			DirectedDFS DFS_B = new DirectedDFS(graph, b);
-			boolean[]am = DFS_A.marked;
-			boolean[]bm = DFS_B.marked;
-			for(int i = 0; i<am.length; i++){
-				if(am[i]==bm[i]){
-					return i;
-				}
-			} 
-			
-			return -1;
-		}
-
-	}
-	
-
   
-   /* Node root; 
+    Node root; 
     private List<Integer> path1 = new ArrayList<>(); 
     private List<Integer> path2 = new ArrayList<>(); 
   
@@ -105,14 +63,7 @@ public class LowestCommonAncestor
         path.remove(path.size()-1); 
   
         return false; 
-        */
-    
-    
-    public static void main (String[] args)
-    {
-    	Digraph v = new Digraph(0);
-    	v.addEdge(0,1);
-    }
+    } 
     
 }     
 

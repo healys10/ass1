@@ -1,34 +1,26 @@
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 
-public class DAG <Key>{
+public class DAG {
 	
-	//Data structure to implement new ancestor problem
+	private int V;						//# vertices
+	private int E;						//# edges
+	private ArrayList<Integer>[] adj;   //adj[V] = adjacency list for vertex V
+	private int [] indegree;			//indegree[V] = indegree of vertex V
+	private int [] outdegree;			//outdegree[V] = outdegree of vertex V
+	private boolean marked [];			//list of visited vertices
+	private boolean hasCycle;			//True if graph has cycle
+	private boolean stack [];			//
 	
-	public class Node{
-		
-		public Key key;
-		public ArrayList children;
-		
-		public Node(Key key){
-			this.key = key;
-		}
+	
+	public DAG(int V)
+	{
 		
 	}
-	
-	public ArrayList nodes = new ArrayList();
-	
-	public boolean contains(Key key){
-		for(int i = 0; i < nodes.size(); i++){
-			if(nodes.get(i).equals(key)){
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public void addChild(Node x, Key key){
-		x.children.add(key);
-		nodes.add(key);
+	public int V()
+	{
+		return V;
 	}
 
 }

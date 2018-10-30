@@ -6,36 +6,29 @@ import org.junit.Test;
 public class LowestCommonAncestorTest
 {
 
+	@Test
+	public void testConstructor()
+	{
+		Node node = new Node(1);
+		assertNotNull("Testing constructor..",node);
+	}
 	
 	@Test
 	public void testEmpty()
 	{
-		//LowestCommonAncestor tree = new LowestCommonAncestor();
-		Digraph graph = new Digraph(0);
-		LowestCommonAncestor lca = new LowestCommonAncestor(graph);
-		int test = lca.lowestCommonAncestor(1,2);
-		assertEquals(test,-1);
-		//assertEquals("Checking empty tree", -1, tree.findLCA(2,3));
+		LowestCommonAncestor tree = new LowestCommonAncestor();
+		assertEquals("Checking empty tree", -1, tree.findLCA(2,3));
 	}
 	
 	@Test
-	public void test()
+	public void testSingle()
 	{
-		//LowestCommonAncestor test = initializeData();
-		Digraph graph = new Digraph(10);
-		graph.addEdge(1, 2);
-		graph.addEdge(1, 3);
-		graph.addEdge(1, 4);
-		graph.addEdge(3, 6);
-		graph.addEdge(4, 5);
-		graph.addEdge(5, 7);
-		graph.addEdge(6, 7);
-		graph.addEdge(7, 8);
-		LowestCommonAncestor test = new LowestCommonAncestor(graph);
-		assertEquals(1,test.lowestCommonAncestor(6, 1));
-	}  
+		LowestCommonAncestor tree = new LowestCommonAncestor();
+		tree.root = new Node(1);
+		assertEquals("Checking tree with single node at 1,1", 1, tree.findLCA(1,1));
+		assertEquals("Checking tree with single node at other", -1, tree.findLCA(0,0));
+	}
 	
-	/*
 	@Test
 	public void testMultiple()
 	{
@@ -91,6 +84,5 @@ public class LowestCommonAncestorTest
 		assertEquals("Checking", -2, tree.findLCA(-5,-1));
 		assertEquals("Checking", -5, tree.findLCA(-5,-4));
 	}
-*/
-
+	
 }
