@@ -129,5 +129,56 @@ public class DAG {
 		}
 		stack[v] = false;
 	}
+	
+	
+	
+	public int findLCA(int v, int w)
+	{
+		findCycle(0);
+		
+		if(hasCycle) //Not DAG
+		{
+			return -1;
+		}
+		else if(validateVertex(v) < 0 || validateVertex(w) < 0)
+		{
+			return -1;
+		}
+		else if(E == 0)
+		{
+			//Empty
+			return -1;
+		}
+		
+		DAG reverse = reverse(); //reverse function
+		
+		ArrayList<Integer> array1 = reverse.BFS(v);//breadth first search
+		ArrayList<Integer> array2 = reverse.BFS(w);
+		ArrayList<Integer> commonAncestors = new ArrayList<Integer>();
+		
+		boolean found = false;
+		
+		for(int i = 0; i < array1.size(); i++)
+		{
+			for(int j = 0; j < array2.size(); j++)
+			{
+				if(array1.get(i) == array2.get(j))
+				{
+					commonAncestors.add(array1.get(i));
+					found = true;
+				}
+			}
+		}
+		
+		if(found)
+		{
+			return commonAncestors.get(0);
+		}
+		else
+		{
+			return -1; //None found
+		}
+	}
+	
 
 }
