@@ -22,5 +22,23 @@ public class DAG {
 	{
 		return V;
 	}
+	public int E()
+	{
+		return E;
+	}
+	public void addEdge(int v, int w)
+	{
+			
+	}
+	public int indegree(int v)
+	{
+	
+		
+	}
+	public int outdegree(int v)
+	{
+		
+		
+	}
 
 }
