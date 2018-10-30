@@ -16,16 +16,37 @@ public class DAG {
 	
 	public DAG(int V)
 	{
+		if(V < 0)
+		{
+			throw new IllegalArgumentException("The number of vertices must be greater than 0");
+		}
 		
+		this.V = V;
+		this.E = 0;
+		indegree = new int[V];
+		marked = new boolean[V];
+		stack = new boolean[V];
+		adj = (ArrayList<Integer>[]) new ArrayList[V];
+		
+		for(int v = 0; v < V; v++)
+		{
+			adj[v] = new ArrayList<Integer>();
+		}
 	}
+	
+	
 	public int V()
 	{
 		return V;
 	}
+	
+	
 	public int E()
 	{
 		return E;
 	}
+	
+	
 	public void addEdge(int v, int w)
 	{
 		if((validateVertex(v) > 0) && (validateVertex(w) > 0))
@@ -39,6 +60,8 @@ public class DAG {
 			System.out.println("Please enter numbers between 0 and " + (V-1));
 		}		
 	}
+	
+	
 	public int indegree(int v)
 	{
 		if(validateVertex(v) > 0)
@@ -50,6 +73,8 @@ public class DAG {
 			return -1;
 		}
 	}
+	
+	
 	public int outdegree(int v)
 	{
 		if(validateVertex(v) > 0)
@@ -61,6 +86,8 @@ public class DAG {
 			return -1;
 		}
 	}
+	
+	
 	private int validateVertex(int v)
 	{
 		if(v < 0 || v >= V)
