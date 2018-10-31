@@ -191,11 +191,11 @@ public class DAG {
 		
 		while(queue.size() != 0)
 		{
-			s = queue.poll(); //Sets s to the head of the list
+			s = queue.poll(); //Set s to head of list
 			order.add(s);
 			
 			//Find adjacent vertices to s. If not visited,
-			//mark as visited (true) and enqueue
+			//mark as visit and enqueue
 			Iterator<Integer> i = adj[s].listIterator();
 			
 			while(i.hasNext())
@@ -209,6 +209,19 @@ public class DAG {
 			}
 		}
 		return order;
+	}
+	
+	public DAG reverse()
+	{
+		DAG reverse = new DAG(V);
+		for(int v = 0; v <V; v++)
+		{
+			for(int w : adj(v))
+			{
+				reverse.addEdge(w, v);
+			}		
+		}
+		return reverse;
 	}
 	
 
