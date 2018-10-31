@@ -180,5 +180,36 @@ public class DAG {
 		}
 	}
 	
+	public ArrayList<Integer> BFS(int s)
+	{
+		ArrayList<Integer> order = new ArrayList<Integer>();
+		boolean visit[] = new boolean[V]; //Marks vertices as not visit
+		LinkedList<Integer> queue = new LinkedList<Integer>();
+		
+		visit[s] = true;
+		queue.add(s);
+		
+		while(queue.size() != 0)
+		{
+			s = queue.poll(); //Sets s to the head of the list
+			order.add(s);
+			
+			//Find adjacent vertices to s. If not visited,
+			//mark as visited (true) and enqueue
+			Iterator<Integer> i = adj[s].listIterator();
+			
+			while(i.hasNext())
+			{
+				int n = i.next();
+				if(!visit[n])
+				{
+					visit[n] = true;
+					queue.add(n);
+				}
+			}
+		}
+		return order;
+	}
+	
 
 }
